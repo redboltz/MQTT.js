@@ -105,6 +105,17 @@ export declare class MqttClient extends events.EventEmitter {
                  callback?: PacketCallback): this
 
   /**
+   * cancelPublish - cancel publish corresponding to messageId
+   *
+   * @param {Number} messageId - messageId corresponding to publish
+   * @returns {MqttClient} this - for chaining
+   * @api public
+   *
+   * @example client.cancelPublish(client.getLastMessageId());
+   */
+  public cancelPublish (messageId: number): this
+
+  /**
    * subscribe - subscribe to <topic>
    *
    * @param {String, Array, Object} topic - topic(s) to subscribe to, supports objects in the form {'topic': qos}
